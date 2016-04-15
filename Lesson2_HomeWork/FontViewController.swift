@@ -24,7 +24,8 @@ class FontViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.fontTableView.dataSource = self
-        self.model = self.getFonts()
+        self.fontTableView.delegate = self
+        self.getFonts()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,8 +34,7 @@ class FontViewController: UIViewController {
     }
 
     //Получим список шрифтов
-    func getFonts() -> [[String]]{
-        var fonts:[[String]] = []
+    func getFonts(){
         
         let fontFamilyNames = UIFont.familyNames()
         for familyName in fontFamilyNames{
@@ -46,10 +46,14 @@ class FontViewController: UIViewController {
                 familyContent.append(fontName)
             }
             
-            fonts.append(familyContent)
+            self.model.append(familyContent)
         }
-        
-        return fonts
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let newVC = segue.destinationViewController as? InstanceViewController {
+            newVC.fontName = sender as! String
+        }
     }
 
 }
@@ -86,5 +90,12 @@ extension FontViewController:UITableViewDataSource{
         label?.font = UIFont(name: text, size: 14)!
         
         return cell!
+    }
+}
+
+extension FontViewController:UITableViewDelegate{
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let fontName = self.model[indexPath.section][indexPath.row]
+        performSegueWithIdentifier("ShowFontInstance", sender: fontName)
     }
 }

@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Font Family-->
+        <!--Font View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Font Family" id="BYZ-38-t0r" customClass="FontViewController" customModule="Lesson2_HomeWork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FontViewController" customModule="Lesson2_HomeWork" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,7 +23,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="templateForFontRow" textLabel="F1A-qk-eOp" style="IBUITableViewCellStyleDefault" id="bmV-kb-uot">
-                                        <rect key="frame" x="0.0" y="28" width="550" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="550" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bmV-kb-uot" id="zyZ-Yx-Mdj">
                                             <rect key="frame" x="0.0" y="0.0" width="550" height="43"/>
@@ -50,57 +50,82 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h5W-l9-t2z" secondAttribute="bottom" id="2Ku-3a-QTh"/>
-                            <constraint firstItem="TT1-h5-32D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="MSt-mk-Njg"/>
-                            <constraint firstItem="h5W-l9-t2z" firstAttribute="top" secondItem="TT1-h5-32D" secondAttribute="bottom" constant="20" id="QoI-Me-YjA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TT1-h5-32D" secondAttribute="trailing" id="XMW-2C-TUF"/>
-                            <constraint firstItem="TT1-h5-32D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g4f-Oc-yxO"/>
-                            <constraint firstItem="h5W-l9-t2z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="h7b-qq-W6s"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="h5W-l9-t2z" secondAttribute="trailing" constant="5" id="qzF-LM-ejS"/>
+                            <constraint firstItem="h5W-l9-t2z" firstAttribute="top" secondItem="TT1-h5-32D" secondAttribute="bottom" constant="20" id="3Zu-bN-Myo"/>
+                            <constraint firstItem="TT1-h5-32D" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="75e-Yv-qiF"/>
+                            <constraint firstItem="h5W-l9-t2z" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Idv-7g-RhC"/>
+                            <constraint firstItem="h5W-l9-t2z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="YWo-Fc-VAu"/>
+                            <constraint firstItem="TT1-h5-32D" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="am3-Vm-b5q"/>
+                            <constraint firstItem="TT1-h5-32D" firstAttribute="centerX" secondItem="h5W-l9-t2z" secondAttribute="centerX" id="jpa-4k-4g3"/>
+                            <constraint firstItem="TT1-h5-32D" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vCy-HD-x0H"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kId-dU-FMg">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="PCZ-G7-Tk3"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="fontTableView" destination="h5W-l9-t2z" id="tUj-sT-1pb"/>
+                        <segue destination="PxO-TU-ftl" kind="show" identifier="ShowFontInstance" id="o4Q-Qn-lpr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="442"/>
+            <point key="canvasLocation" x="1377" y="442"/>
         </scene>
         <!--Instance View Controller-->
-        <scene sceneID="wLk-Gb-S7o">
+        <scene sceneID="EmV-KD-qlO">
             <objects>
-                <viewController id="UqS-ay-Pnf" customClass="InstanceViewController" customModule="Lesson2_HomeWork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PxO-TU-ftl" customClass="InstanceViewController" customModule="Lesson2_HomeWork" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JNp-eL-ezv"/>
-                        <viewControllerLayoutGuide type="bottom" id="Jw1-ld-Izj"/>
+                        <viewControllerLayoutGuide type="top" id="6gb-Qg-Io7"/>
+                        <viewControllerLayoutGuide type="bottom" id="WKH-UM-92Q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n7j-JM-25Y">
+                    <view key="view" contentMode="scaleToFill" id="afv-U7-krA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp7-aB-EeE">
+                                <rect key="frame" x="27" y="289" width="553" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pp7-aB-EeE" firstAttribute="leading" secondItem="afv-U7-krA" secondAttribute="leadingMargin" constant="7" id="3yr-bh-pZ6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pp7-aB-EeE" secondAttribute="trailing" id="aty-A1-PUK"/>
+                            <constraint firstItem="pp7-aB-EeE" firstAttribute="centerY" secondItem="afv-U7-krA" secondAttribute="centerY" id="cXh-Vg-697"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="FontLabel" destination="pp7-aB-EeE" id="4Bg-Pg-ZGH"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pJk-k9-LYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPF-Gk-j98" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="1152"/>
+            <point key="canvasLocation" x="1377" y="1179"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="wPq-5O-ZnY">
+        <scene sceneID="lnC-HA-jjc">
             <objects>
-                <navigationController id="8nE-oG-Wk9" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VhV-vW-ss0">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4nW-yX-vRx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eoj-xh-pbl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="75g-lY-OZa">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="g1F-e8-6Z3"/>
-                        <segue destination="UqS-ay-Pnf" kind="show" id="VRQ-0a-BEi"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lAu-yf-e7v"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6QI-LY-XAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6sS-p2-RHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-163" y="716"/>
+            <point key="canvasLocation" x="565" y="442"/>
         </scene>
     </scenes>
 </document>
